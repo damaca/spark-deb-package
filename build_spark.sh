@@ -34,7 +34,7 @@ cp ${origdir}/spark.default build/etc/default/spark
 cp ${origdir}/spark.upstart.conf build/etc/init/spark.conf
 
 tar zxf ${origdir}/${src_package}
-cd spark-${version}
+cd spark-${version}-${package_type}
 #sbt update
 #sbt package
 #mv config/log4j.properties config/server.properties ../build/etc/spark
