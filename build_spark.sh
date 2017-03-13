@@ -31,8 +31,8 @@ mkdir -p build/var/log/spark
 mkdir -p build/etc/systemd/system
 #mkdir -p build/etc/default
 #mkdir -p build/etc/init
-cp ${origdir}/spark-master.unit build/etc/systemd/system
-cp ${origdir}/spark-slave.unit build/etc/systemd/system
+cp ${origdir}/spark-master.service build/etc/systemd/system
+cp ${origdir}/spark-slave.service build/etc/systemd/system
 
 #cp ${origdir}/spark.default build/etc/default/spark
 #cp ${origdir}/spark.upstart.conf build/etc/init/spark.conf
