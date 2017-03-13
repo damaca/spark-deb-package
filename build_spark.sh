@@ -28,6 +28,7 @@ mkdir -p spark
 cd spark
 mkdir -p build/opt/spark
 mkdir -p build/var/log/spark
+mkdir -p build/etc/systemd/system
 #mkdir -p build/etc/default
 #mkdir -p build/etc/init
 cp ${origdir}/spark-master.unit build/etc/systemd/system
