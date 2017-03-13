@@ -1,0 +1,15 @@
+[Unit]
+Description=Spark Slave node
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=forking
+User=spark
+ExecStartPre=/opt/spark/conf/spark-env.sh
+ExecStart=/opt/spark/sbin/start-slave.sh
+ExecStop=/opt/spark/sbin/stop-slave.sh
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

@@ -27,12 +27,14 @@ rm -rf spark
 mkdir -p spark
 cd spark
 mkdir -p build/opt/spark
-mkdir -p build/etc/default
-mkdir -p build/etc/init
 mkdir -p build/var/log/spark
+#mkdir -p build/etc/default
+#mkdir -p build/etc/init
+cp ${origdir}/spark-master.unit build/etc/systemd/system
+cp ${origdir}/spark-slave.unit build/etc/systemd/system
 
-cp ${origdir}/spark.default build/etc/default/spark
-cp ${origdir}/spark.upstart.conf build/etc/init/spark.conf
+#cp ${origdir}/spark.default build/etc/default/spark
+#cp ${origdir}/spark.upstart.conf build/etc/init/spark.conf
 
 tar zxf ${origdir}/${src_package}
 cd spark-${version}-${package_type}
