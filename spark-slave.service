@@ -6,8 +6,8 @@ After=network.target network-online.target
 [Service]
 Type=forking
 User=spark
-ExecStartPre=/opt/spark/conf/spark-env.sh
-ExecStart=/opt/spark/sbin/start-slave.sh spark://$SPARK_MASTER_HOST
+EnvironmentFile=/opt/spark/conf/envfilesystemd
+ExecStart=/opt/spark/sbin/start-slave.sh spark://${SPARK_MASTER_HOST}
 ExecStop=/opt/spark/sbin/stop-slave.sh
 Restart=on-abort
 
